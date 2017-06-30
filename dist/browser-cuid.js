@@ -93,8 +93,8 @@
   };
 
   api.fingerprint = function browserPrint() {
-    return pad((navigator.mimeTypes.length +
-      navigator.userAgent.length).toString(36) +
+    return pad((navigator.mimeTypes ? navigator.mimeTypes.length : 0 +
+      navigator.userAgent ? navigator.userAgent.length : 0).toString(36) +
       api.globalCount().toString(36), 4);
   };
 
